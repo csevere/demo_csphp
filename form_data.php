@@ -3,12 +3,45 @@
 //extracting data from the forms 
 
 if(isset($_POST['submit'])){
+    $username = $_POST['username'];
+    $password = $_POST['password']; 
 
-$username = $_POST['username'];
-$password = $_POST['password']; 
+    $names = array ("Ediwn", "Carrie", "Peter", "Samid", "Jane", "Tom", "Tim");
+    $min = 5;
+    $max = 12;
+    // $red = "red"
 
-echo "Hello" . $username; 
-echo "Your password is" . $password;
+    //Validating whether the user is in the database or not; can do the same thing with passwords
+
+    if(strlen($username) < $min){
+        echo "Username must be more than 5 characters";
+    }elseif(strlen($username) > $max){
+        echo "Username must be less than 12 characters";
+    }else{
+        echo "You can proceed!";
+    }
+
+    if(!in_array($username, $name)){
+        echo "Username not found. Please sign up!";
+    }else{
+        echo "Welcome, " . $username . "!"; 
+    }
+
+    //PASSWORD VALIDATION
+    $password = "bunny";
+    $username = "Carla";
+    $passwords = array ("cat", "bunny", "Peter", "Samid", "Jane", "Tom", "Tim");
+    
+    if(!in_array($password, $passwords)){
+        echo "Password not found. Please try again!";
+    }else{
+        echo "Login, successful! Welcome, " . $username . "!";
+    }
+    
+
+
+// echo "Hello" . $username; 
+// echo "Your password is" . $password;
 
 }
 
